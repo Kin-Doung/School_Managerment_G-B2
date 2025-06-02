@@ -5,15 +5,15 @@ import { Assignment } from "./Assignment";
 import { Exam } from "./Exam";
 import { Quiz } from "./Quiz";
 export class Subject {
-    private name : string;
-    private code : string;
-    private classroom : Classroom;
+    private name: string;
+    private code: string;
+    private classroom: Classroom;
     public timetable: Timetable;
     private materials: Material[];
     private assignments: Assignment[];
     private exam: Exam[];
     private quizzes: Quiz[];
-    constructor (name:string, code : string, classroom : Classroom, timetable: Timetable, materials: Material[], assignments: Assignment[], exam: Exam){
+    constructor(name: string, code: string, classroom: Classroom, timetable: Timetable, materials: Material[], assignments: Assignment[], exam: Exam) {
         this.name = name;
         this.code = code;
         this.classroom = classroom;
@@ -23,5 +23,8 @@ export class Subject {
         this.exam = [];
         this.quizzes = [];
     }
-
+    public addMaterial(material: Material): void {
+        this.materials.push(material);
+    }
+    
 }
