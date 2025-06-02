@@ -1,3 +1,4 @@
+
 import { Student } from "./Student";
 export class Assignment{
     private id: number;
