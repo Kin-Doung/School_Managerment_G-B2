@@ -20,5 +20,11 @@ export class Subject {
         this.assignments = assignments;
         this.quizzes = quizzes;
     }
+    addMaterial(material: Material): void {
+        this.materials.push(material);
+    }
 
+    addAssignment(assignment: Assignment): void {
+        this.assignments.push(assignment);
+    }
 }
