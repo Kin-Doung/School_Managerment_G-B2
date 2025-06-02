@@ -23,8 +23,11 @@ export class Subject {
         this.exam = [];
         this.quizzes = [];
     }
-    public addMaterial(material: Material): void {
+    addMaterial(material: Material): void {
         this.materials.push(material);
     }
-    
+
+    addAssignment(assignment: Assignment): void {
+        this.assignments.push(assignment);
+    }
 }
