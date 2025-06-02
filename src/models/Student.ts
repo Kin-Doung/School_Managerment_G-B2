@@ -43,4 +43,7 @@ export class Student {
             this.enrolledSubjects.push(subject);
         }
     }
+    public getSubjects(): Subject[] {
+    return this.enrolledSubjects;
+    }
 }
