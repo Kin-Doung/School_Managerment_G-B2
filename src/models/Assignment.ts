@@ -2,7 +2,7 @@
 import { Student } from "./Student";
 export class Assignment{
     private id: number;
-    private title: string;
+    public title: string;
     private dueDate: string;
     private isSubmitted: boolean;
     private submissions: { student: Student, content: string }[];
