@@ -3,6 +3,7 @@ import { Person } from "./abstract/Person";
 import { Material } from "./Material";
 import { Subject } from "./Subject";
 
+
 export class Teacher extends Person implements User {
 
     private subjects: Subject[] = [];

@@ -11,13 +11,11 @@ export class Grade {
         this.isMissing = isMissing;
     }
 
-    // Get the name (assuming it relates to the assignment's title or subject)
     public getName(): string {
-        return this.assignment.title; // Assuming Assignment has a 'title' property
+        return this.assignment.title; 
     }
 
-    // Get the role (could be a placeholder or related to the context, e.g., "Student" or "Grade")
     public getRole(): string {
-        return "Grade"; // Default role, can be adjusted based on context
+        return "Grade"; 
     }
 }
