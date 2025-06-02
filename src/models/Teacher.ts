@@ -34,5 +34,7 @@ export class Teacher extends Person implements User {
     setSubjects(subjects: Subject[]): void {
         this.subjects = subjects;
     }
-
+    authenticate(inputUsername: string, inputPassword: string): boolean {
+        return inputUsername === "teacher" && inputPassword === "password";
+    }
 }
