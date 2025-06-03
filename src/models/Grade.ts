@@ -1,6 +1,6 @@
 import { Assignment } from './Assignment';
-
-export class Grade {
+import { Envaluatable } from '../interfaces/Envaluatable';
+export class Grade implements Envaluatable {
     private assignment: Assignment;
     private score: number;
     private isMissing: boolean;
@@ -17,5 +17,11 @@ export class Grade {
 
     public getRole(): string {
         return "Grade"; 
+    }
+    evaluate(): number {
+        if (this.isMissing) {
+            return 0; // If the assignment is missing, return a score of 0
+        }
+        return this.score; // Otherwise, return the score
     }
 }
