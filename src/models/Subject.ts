@@ -54,4 +54,27 @@ export class Subject {
     getAssignments(): Assignment[] {
         return this.assignments;
     }
+    getExams(): Exam[] {
+        return this.exams;
+    }
+
+    getQuizzes(): Quiz[] {
+        return this.quizzes;
+    }
+
+    getMaterials(): Material[] {
+        return this.materials;
+    }
+
+    getClassroom(): Classroom | null {
+        return this.classroom;
+    }
+
+    getTimetable(): Timetable | null {
+        return this.timetable;
+    }
+
+    setClassroom(classroom: Classroom): void {
+        this.classroom = classroom;
+    }
 }

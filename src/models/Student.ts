@@ -66,4 +66,14 @@ export class Student extends Person {
     public getSubjects(): Subject[] {
         return this.enrolledSubjects;
     }
+
+    public getFeedbacks(): Feedback[] {
+        return this.feedbacks;
+    }
+
+    public getGrades(): Grade[] {
+        return this.grades;
+    }
+
+
 }
