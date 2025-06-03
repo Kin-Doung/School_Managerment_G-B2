@@ -1,42 +1,33 @@
-// src/models/Subject.ts
-import { Classroom } from './Classroom';
-import { Timetable } from './Timetable';
-import { Material } from './Material';
-import { Assignment } from './Assignment';
-import { Quiz } from './Quiz';
-
+import { Classroom } from "./Classroom";
+import { Timetable } from "./Timetable";
+import { Material } from "./Material";
+import { Assignment } from "./Assignment";
+import { Exam } from "./Exam";
+import { Quiz } from "./Quiz";
 export class Subject {
-    name: string;
-    code: string;
-    classroom: Classroom;
-    private timetable: Timetable[] = [];
-    private materials: Material[] = [];
-    private assignments: Assignment[] = [];
-    private quizzes: Quiz[] = [];
-
-    constructor(name: string, code: string, classroom: Classroom) {
+    private name: string;
+    private code: string;
+    private classroom: Classroom;
+    public timetable: Timetable;
+    private materials: Material[];
+    private assignments: Assignment[];
+    private exam: Exam[];
+    private quizzes: Quiz[];
+    constructor(name: string, code: string, classroom: Classroom, timetable: Timetable, materials: Material[], assignments: Assignment[], exam: Exam) {
         this.name = name;
         this.code = code;
         this.classroom = classroom;
+        this.materials = materials;
+        this.assignments = assignments;
+        this.timetable = timetable;
+        this.exam = [];
+        this.quizzes = [];
     }
-
     addMaterial(material: Material): void {
         this.materials.push(material);
     }
 
     addAssignment(assignment: Assignment): void {
         this.assignments.push(assignment);
-    }
-
-    addTimetable(timetable: Timetable): void {
-        this.timetable.push(timetable);
-    }
-
-    addQuiz(quiz: Quiz): void {
-        this.quizzes.push(quiz);
-    }
-
-    getName(): string {
-        return this.name;
     }
 }

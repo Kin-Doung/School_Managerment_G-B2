@@ -1,8 +1,6 @@
-// src/models/UserAccount.ts
 export class UserAccount {
-    username: string;
-    password: string;
-    isActive: boolean;
+    private username: string;
+    private password: string;
 
     constructor(username: string, password: string) {
         this.username = username;
