@@ -9,10 +9,15 @@ export class Registration {
         this.status = "Pending";
     }
 
+    // Approves the registration
     public approveRegistration(): void {
         this.status = "Approved";
     }
 
+    /**
+     * Gets the registration status
+     * @returns The current status
+     */
     public getStatus(): string {
         return this.status;
     }

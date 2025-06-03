@@ -1,5 +1,7 @@
 
 import { Student } from "./Student";
+
+
 export class Assignment{
     private id: number;
     public title: string;
@@ -13,6 +15,12 @@ export class Assignment{
         this.isSubmitted = isSubmitted;
         this.submissions = submissions;
     }
+
+    /**
+     * Adds a student submission to the assignment
+     * @param student - The Student who is submitting
+     * @param content - The submission content
+     */
     addSubmission(student: Student, content: string): void {
         this.submissions.push({ student, content });
         this.isSubmitted = true;

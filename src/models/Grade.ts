@@ -11,13 +11,26 @@ export class Grade implements Envaluatable {
         this.isMissing = isMissing;
     }
 
+    /**
+     * Gets the assignment title
+     * @returns The assignment title
+     */
     public getName(): string {
         return this.assignment.title; 
     }
 
+    /**
+     * Gets the assignment ID
+     * @returns The assignment ID
+     */
     public getRole(): string {
         return "Grade"; 
     }
+
+    /**
+     * Gets the score of the grade
+     * @returns The score
+     */
     evaluate(): number {
         if (this.isMissing) {
             return 0; // If the assignment is missing, return a score of 0

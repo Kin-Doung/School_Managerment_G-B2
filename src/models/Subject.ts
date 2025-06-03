@@ -27,14 +27,26 @@ export class Subject {
         this.quizzes = quizzes;
     }
 
+    /**
+     * Adds material to the subject
+     * @param material - The Material to add
+     */
     addMaterial(material: Material): void {
         this.materials.push(material);
     }
 
+    /**
+     * Adds an assignment to the subject
+     * @param assignment - The Assignment to add
+     */
     addAssignment(assignment: Assignment): void {
         this.assignments.push(assignment);
     }
 
+    /**
+     * Adds an exam to the subject
+     * @param exam - The Exam to add
+     */
     addExam(exam: Exam): void {
         this.exams.push(exam);
     }
