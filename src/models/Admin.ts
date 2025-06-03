@@ -27,8 +27,14 @@ export class Admin extends Person implements User {
         student.getSubjects().push(subject);
     }
 
-    public assignTeacherToSubject(teacher: Teacher, subject: Subject): void {
-        teacher.getSubjects().push(subject);
+    public assignTeacherToSubject(teacher: any, subject: Subject): void {
+        if (typeof teacher.getSubjects === "function") {
+            teacher.getSubjects().push(subject);
+        } else if (Array.isArray(teacher.subjects)) {
+            teacher.subjects.push(subject);
+        } else {
+            throw new Error("Teacher object does not have a subjects property.");
+        }
     }
     authenticate(inputUsername: string, inputPassword: string): boolean {
         return inputUsername === "admin" && inputPassword === "password";

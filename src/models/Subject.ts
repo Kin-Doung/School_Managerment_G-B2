@@ -5,29 +5,53 @@ import { Assignment } from "./Assignment";
 import { Exam } from "./Exam";
 import { Quiz } from "./Quiz";
 export class Subject {
+    private id: number;
     private name: string;
     private code: string;
-    private classroom: Classroom;
-    public timetable: Timetable;
+    private classroom: Classroom | null;
+    public timetable: Timetable | null;
     private materials: Material[];
     private assignments: Assignment[];
-    private exam: Exam[];
+    private exams: Exam[];
     private quizzes: Quiz[];
-    constructor(name: string, code: string, classroom: Classroom, timetable: Timetable, materials: Material[], assignments: Assignment[], exam: Exam) {
+
+    constructor(id: number, name: string, code: string = "", classroom: Classroom | null = null, timetable: Timetable | null = null, materials: Material[] = [], assignments: Assignment[] = [], exams: Exam[] = [], quizzes: Quiz[] = []) {
+        this.id = id;
         this.name = name;
         this.code = code;
         this.classroom = classroom;
+        this.timetable = timetable;
         this.materials = materials;
         this.assignments = assignments;
-        this.timetable = timetable;
-        this.exam = [];
-        this.quizzes = [];
+        this.exams = exams;
+        this.quizzes = quizzes;
     }
+
     addMaterial(material: Material): void {
         this.materials.push(material);
     }
 
     addAssignment(assignment: Assignment): void {
         this.assignments.push(assignment);
+    }
+
+    addExam(exam: Exam): void {
+        this.exams.push(exam);
+    }
+
+    addQuiz(quiz: Quiz): void {
+        this.quizzes.push(quiz);
+    }
+
+    getId(): number {
+        return this.id;
+    }
+
+    getName(): string {
+        return this.name;
+    }
+
+    getAssignments(): Assignment[] {
+        return this.assignments;
     }
 }
