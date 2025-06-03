@@ -30,4 +30,7 @@ export class Admin extends Person implements User {
     public assignTeacherToSubject(teacher: Teacher, subject: Subject): void {
         teacher.getSubjects().push(subject);
     }
+    authenticate(inputUsername: string, inputPassword: string): boolean {
+        return inputUsername === "admin" && inputPassword === "password";
+    }
 }
